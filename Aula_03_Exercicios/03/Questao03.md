@@ -1,4 +1,4 @@
-#3. Apresente os comportamentos do código anterior nos seguintes casos:
+# 3. Apresente os comportamentos do código anterior nos seguintes casos:
 
 ## (a) Se o usuário insere mais de um nome.
 ```bash
