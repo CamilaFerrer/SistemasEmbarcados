@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv)
 {
-	if(argc<2){
+	/*if(argc<2){
 		printf(" ----------------------------\n");
 		printf("|   Não foi inserido nome    |\n");
 		printf("| na chamada deste programa. |\n");
@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 		printf("|    $                       |\n");
 		printf(" ----------------------------\n");
 		return -1;
-	}
+	}*/
 	
 	printf("Ola");
 	for(int i = 1; i<argc; i++){
