@@ -1,11 +1,11 @@
 3. Apresente os comportamentos do código anterior nos seguintes casos:
 
-(a) Se o usuário insere mais de um nome.
+# (a) Se o usuário insere mais de um nome.
 ```bash
 $ ./ola_usuario_1
 $ Digite o seu nome: Eu Mesmo
 ```
-# Apenas o primeiro nome é salvo e impresso
+* Apenas o primeiro nome é salvo e impresso
 
 (b) Se o usuário insere mais de um nome entre aspas duplas. Por exemplo:
 ```bash
