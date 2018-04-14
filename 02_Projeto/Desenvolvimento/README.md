@@ -1,14 +1,19 @@
 # FGParking
 
-* Aluna: Camila Carneiro Ferrer Santos | 14/0080619
-
-## Descrição
-
 O projeto consiste em validar a entrada do veículo por reconhecimento de imagem da placa: ao entrar no estacionamento um sensor de movimento aciona uma câmera que captura a imagem da placa do veículo e, após processado os dados da placa, o usuário tem acesso à quantidade de vagas no estacionamento por um aplicativo/site. Além de recebe uma notificação pelo aplicativo, assim que entra informando o horário de entrada do veículo e, assim que sai, informando o horário de saída do estacionamento.
+
+## Equipe
+
+| Matrícula | Nome | E-mail | GitHub | Papel |
+| --- | --- | --- | --- | --- |
+| 14/0080619 | Camila Carneiro Ferrer Santos | camila.c.ferrer@gmail.com | [CamilaFerrer](https://github.com/CamilaFerrer) | Desenvolvedora |
+| 14/0042784 | Jéssica de Souza Alves |  |  | Desenvolvedora |
+
 
 ## Objetivos
 
 O projeto destina-se a implementar um sistema de apoio computadorizado para controle de entrada e saída de veículos do estacionamento da Universidade de Brasília Campus Gama.
+
 
 ## Requisitos
 Para elaborar as funcionalidades do sistema, foram elencados os seguintes requisitos:
