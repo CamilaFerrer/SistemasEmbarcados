@@ -4,10 +4,10 @@ O projeto consiste em validar a entrada do veículo por reconhecimento de imagem
 
 ## Equipe
 
-| Matrícula | Nome | E-mail | GitHub | Papel |
-| --- | --- | --- | --- | --- |
-| 14/0080619 | Camila Carneiro Ferrer Santos | camila.c.ferrer@gmail.com | [CamilaFerrer](https://github.com/CamilaFerrer) | Desenvolvedora |
-| 14/0042784 | Jéssica de Souza Alves |  |  | Desenvolvedora |
+| Matrícula | Nome | GitHub | Papel |
+| --- | --- | --- | --- |
+| 14/0080619 | Camila Carneiro Ferrer Santos | [CamilaFerrer](https://github.com/CamilaFerrer) | Desenvolvedora |
+| 14/0042784 | Jéssica de Souza Alves | [JessicaSouz](https://github.com/JessicaSouz) | Desenvolvedora |
 
 
 ## Objetivos
