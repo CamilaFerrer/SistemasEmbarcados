@@ -21,7 +21,7 @@ Para elaborar as funcionalidades do sistema, foram elencados os seguintes requis
 ### Controle de Entradas
 * **REQ01:** A câmera do sistema deve permanecer em Standby até ser acionada por movimento de veículo na entrada do estacionamento.
 
-* **REQ02:* O sistema deve informar ao usuário cadastrado quando seu carro entra no estacionamento.
+* **REQ02:** O sistema deve informar ao usuário cadastrado quando seu carro entra no estacionamento.
 
 * **REQ03:** O sistema deve decrementar em uma unidade a quantidade de vagas disponíveis.
 
