@@ -1,7 +1,7 @@
 ## Para todas as questões, compile-as com o gcc e execute-as via terminal.
 
 ### 1. Crie um "Olá mundo!" em C.
-```
+```C
 #include <stdio.h>
 
 int main(void)
@@ -12,7 +12,7 @@ int main(void)
 ```
 
 ### 2. Crie um código em C que pergunta ao usuário o seu nome, e imprime no terminal "Ola " e o nome do usuário. Por exemplo, considerando que o código criado recebeu o nome de 'ola_usuario_1':
-```
+```C
 #include <stdio.h>
 
 int main(void)
@@ -38,47 +38,46 @@ $ Ola Eu
 ### 3. Apresente os comportamentos do código anterior nos seguintes casos:
 
 (a) Se o usuário insere mais de um nome.
-```bash
+```
 $ ./ola_usuario_1 
 Digite o seu nome: Eu mesmo
 Ola Eu
 ```
 
 (b) Se o usuário insere mais de um nome entre aspas duplas.
-```bash
+```
 $ ./ola_usuario_1
 $ Digite o seu nome: "Eu Mesmo"
 Ola "Eu
 ```
 
 (c) Se é usado um pipe.
-```bash
+```
 $ echo Eu | ./ola_usuario_1
 Digite o seu nome: Ola Eu
 ```
 
 (d) Se é usado um pipe com mais de um nome. Por exemplo:
-```bash
+```
 $ echo Eu Mesmo | ./ola_usuario_1
 Digite o seu nome: Ola Eu
 ```
 
 (e) Se é usado um pipe com mais de um nome entre aspas duplas.
-```bash
+```
 $ echo "Eu Mesmo" | ./ola_usuario_1
 Digite o seu nome: Ola Eu
 ```
 
 (f) Se é usado o redirecionamento de arquivo.
-```bash
+```
 $ echo Ola mundo cruel! > ola.txt
 $ ./ola_usuario_1 < ola.txt
 Digite o seu nome: Ola Ola
 ```
 
 ### 4. Crie um código em C que recebe o nome do usuário como um argumento de entrada (usando as variáveis argc e *argv[]), e imprime no terminal "Ola " e o nome do usuário.
-
-```bash
+```C
 #include <stdio.h>
 
 int main(int argc, char **argv)
@@ -96,37 +95,37 @@ int main(int argc, char **argv)
 ### 5. Apresente os comportamentos do código anterior nos seguintes casos:
 
 (a) Se o usuário insere mais de um nome.
-```bash
+```
 $ ./ola_usuario_2 Eu Mesmo
 Ola Eu Mesmo
 ```
 
 (b) Se o usuário insere mais de um nome entre aspas duplas. Por exemplo:
-```bash
+```
 $ ./ola_usuario_2 "Eu Mesmo"
 Ola Eu Mesmo
 ```
 
 (c) Se é usado um pipe. Por exemplo:
-```bash
+```
 $ echo Eu | ./ola_usuario_2
 Ola
 ```
 
 (d) Se é usado um pipe com mais de um nome. Por exemplo:
-```bash
+```
 $ echo Eu Mesmo | ./ola_usuario_2
 Ola
 ```
 
 (e) Se é usado um pipe com mais de um nome entre aspas duplas. Por exemplo:
-```bash
+```
 $ echo "Eu Mesmo" | ./ola_usuario_2
 Ola
 ```
 
 (f) Se é usado o redirecionamento de arquivo. Por exemplo:
-```bash
+```
 $ echo Ola mundo cruel! > ola.txt
 $ ./ola_usuario_2 < ola.txt
 Ola
@@ -134,7 +133,7 @@ Ola
 
 ### 6. Crie um código em C que faz o mesmo que o código da questão 4, e em seguida imprime no terminal quantos valores de entrada foram fornecidos pelo usuário.
 
-```bash
+```C
 #include <stdio.h>
 
 int main(int argc, char **argv)
@@ -156,8 +155,7 @@ Numero de entradas = 2
 ```
 
 ### 7. Crie um código em C que imprime todos os argumentos de entrada fornecidos pelo usuário.
-
-```bash
+```C
 #include <stdio.h>
 
 int main(int argc, char **argv)
@@ -180,7 +178,7 @@ Argumentos: Eu Mesmo e Minha Pessoa
 ### 8. Crie uma função que retorna a quantidade de caracteres em uma string, usando o seguinte protótipo: `int Num_Caracs(char *string);` Salve-a em um arquivo separado chamado 'num_caracs.c'. Salve o protótipo em um arquivo chamado 'num_caracs.h'. Compile 'num_caracs.c' para gerar o objeto 'num_caracs.o'.
 
 * Aruivo .c:
-```
+```C
 #include "num_caracs.h"
 
 int num_caracs(char *string)
@@ -194,26 +192,26 @@ int num_caracs(char *string)
 ```
 
 * Arquivo .h:
-```
+```H
 int num_caracs(char *string);
 ```
 
 * Comando utilizado:
 ```
-gcc -c num_caracs.c
+$ gcc -c num_caracs.c
 ```
 
 ### 9. Re-utilize o objeto criado na questão 8 para criar um código que imprime cada argumento de entrada e a quantidade de caracteres de cada um desses argumentos. Por exemplo, considerando que o código criado recebeu o nome de 'ola_num_caracs_1':
 
-```bash
+```
 $ ./ola_num_caracs_1 Eu Mesmo
-$ Argumento: ./ola_num_caracs_1 / Numero de caracteres: 18
-$ Argumento: Eu / Numero de caracteres: 2
-$ Argumento: Mesmo / Numero de caracteres: 5
+Argumento: ./ola_num_caracs_1 / Numero de caracteres: 18
+Argumento: Eu / Numero de caracteres: 2
+Argumento: Mesmo / Numero de caracteres: 5
 ```
 
 * Arquivo .c criado:
-```
+```C
 #include<stdio.h>
 #include<stdlib.h>
 #include"num_caracs.h"
@@ -277,7 +275,7 @@ Argumento: Mesmo / Numero de Caracteres: 5
 
 
 ### 11. Re-utilize o objeto criado na questão 8 para criar um código que imprime o total de caracteres nos argumentos de entrada. Por exemplo, considerando que o código criado recebeu o nome de 'ola_num_caracs_2':
-```
+```C
 #include <stdio.h>
 #include "num_caracs.h"
 
