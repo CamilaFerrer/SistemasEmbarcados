@@ -51,8 +51,7 @@ O botão ```Up```
   
   (q) Ordenar informações em um arquivo-texto: ```sort opção arquivo```
   
-  (r) Substituir ocorrências de palavras-chave em um arquivo-texto: ```vi nome_arquivo```
-```:%s/palavra_antiga/palavra_nova```
+  (r) Substituir ocorrências de palavras-chave em um arquivo-texto: ```sed 's/palavra_antiga/palavra_nova/g' arquivo```
         
   (s) Conferir se dois arquivos são iguais: ```diff nome_arquivo_1 nome_outro_arquivo_2```
         
