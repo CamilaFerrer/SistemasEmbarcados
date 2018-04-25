@@ -9,6 +9,31 @@ O projeto consiste em validar a entrada do veículo por reconhecimento de imagem
 | 14/0080619 | Camila Carneiro Ferrer Santos | [CamilaFerrer](https://github.com/CamilaFerrer) | Desenvolvedora |
 | 14/0042784 | Jéssica de Souza Alves | [JessicaSouz](https://github.com/JessicaSouz) | Desenvolvedora |
 
+## Execução
+
+### Download
+Para testar o andamento do programa, baixe a pasta **Desenvolvimento** no seu computador e salve-a dentro da pasta **Downloads**.
+
+### Sem acesso a internet
+Caso não tenha acesso a internet, utilize o arquivo .txt disponível na pasta **Arquivos_Teste**. Ele é o arquivo com os dados que o OpenAPLR disponibiliza após reconhecimento da placa. Entre na pasta **Desenvolvimento** e execute os seguintes comandos:
+
+```bash
+$ cp Arquivos_Teste/2018-04-20-0001.* /home/<nome_usuário>/Downloads/Desenvolvimento
+$ make
+$ ./recon_placa 2018-04-20-0001.jpg
+```
+
+### Com acesso a internet
+Caso tenha acesso a internet, abra o arquivo **recon_placa.c** e descomente a linha 23 (delete os caracteres _/*_ e _*/_). Entre na pasta **Desenvolvimento** e execute os seguintes comandos:
+
+```bash
+$ cp Arquivos_Teste/2018-04-20-0001.jpg /home/<nome_usuário>/Downloads/Desenvolvimento
+$ make
+$ ./recon_placa 2018-04-20-0001.jpg
+```
+
+### Resultados
+Na pasta **Banco_de_Dados** terá um arquivo .txt que armazena os horários de acesso ao estacionamento do veículo de acordo com o horários que o programa foi rodado. Na pasta **Imagens** terá o arquivo .jpg da imagem do acesso do veículo ao estacionamento.
 
 ## Objetivos
 
