@@ -12,6 +12,13 @@ O projeto consiste em validar a entrada do veículo por reconhecimento de imagem
 ## Execução
 
 ### Download
+
+Instale o programa OpenALPR:
+
+```bash
+sudo apt-get update && sudo apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
+```
+
 Para testar o andamento do programa, baixe a pasta **Desenvolvimento** no seu computador e salve-a dentro da pasta **Downloads**.
 
 ### Sem acesso a internet
