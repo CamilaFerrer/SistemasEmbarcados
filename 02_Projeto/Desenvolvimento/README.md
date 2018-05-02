@@ -11,32 +11,28 @@ O projeto consiste em validar a entrada do veículo por reconhecimento de imagem
 
 ## Execução
 
-### Download
+Para testar o andamento do programa, baixe a pasta **Desenvolvimento** no seu computador e salve-a dentro da pasta **Downloads**.
 
-Instale o programa OpenALPR:
+### Download de Programas
+
+* Instale o programa OpenALPR:
 
 ```bash
 sudo apt-get update && sudo apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
 ```
 
-Para testar o andamento do programa, baixe a pasta **Desenvolvimento** no seu computador e salve-a dentro da pasta **Downloads**.
+### Acionamento do Sistema ()
 
-### Sem acesso a internet
-Caso não tenha acesso a internet, utilize o arquivo .txt disponível na pasta **Arquivos_Teste**. Ele é o arquivo com os dados que o OpenAPLR disponibiliza após reconhecimento da placa. Entre na pasta **Desenvolvimento** e execute os seguintes comandos:
 
-```bash
-$ cp Arquivos_Teste/2018-04-20-0001.* /home/<nome_usuário>/Downloads/Desenvolvimento
-$ make
-$ ./recon_placa 2018-04-20-0001.jpg
-```
+### Aquisição de Foto ()
 
-### Com acesso a internet
-Caso tenha acesso a internet, abra o arquivo **recon_placa.c** e descomente a linha 23 (delete os caracteres _/*_ e _*/_). Entre na pasta **Desenvolvimento** e execute os seguintes comandos:
+
+### Reconhecimento da Placa (recon.c)
+Existem 3 imagens no repositório disponíveis para testar o código e elas devem estar na mesma pasta que o arquivo recon.c. O nome das imagens devem ser no formato AAAA-MM-DD-CODI.jpg. Execute os seguintes comandos:
 
 ```bash
-$ cp Arquivos_Teste/2018-04-20-0001.jpg /home/<nome_usuário>/Downloads/Desenvolvimento
-$ make
-$ ./recon_placa 2018-04-20-0001.jpg
+$ gcc -o recon recon.c
+$ ./recon 2018-04-20-0001.jpg
 ```
 
 ### Resultados
