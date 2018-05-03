@@ -16,16 +16,38 @@ Para testar o andamento do programa, baixe a pasta **Desenvolvimento** no seu co
 ### Download de Programas
 
 * Instale o programa OpenALPR:
-
 ```bash
-sudo apt-get update && sudo apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
+$ sudo apt-get update && sudo apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
 ```
 
-### Acionamento do Sistema ()
+* Instale o programa fswebcam:
+```bash
+$ sudo apt-get install fswebcam
+```
 
+* Entre na pasta **gpio-watch** e execute:
+```bash
+$ make
+$ sudo make install
+```
 
-### Aquisição de Foto ()
+### Acionamento do Sistema (repositório gpio-watch)
+Para observar botão que está conectado ao pin 23, execute a seguinte linha:
 
+```bash
+$ gpio-watch -e switch 23
+$ cd /etc/gpio-scripts
+$ sudo nano 23
+```
+
+Copie o código do arquivo webcam.sh e coloque dentro do arquivo aberto.
+
+### Aquisição de Foto (webcam.sh)
+Para a implementação desse processo, escrevemos um script Bash que tira as fotos dos veículos utilizando uma webcam. O script salva a imagem na pasta **Imagens** já criada dentro da pasta Desenvolvimento. Logo em seguida faça o arquivo ficar executável e mande rodá-lo:
+
+```bash
+$ chmod 777 23
+```
 
 ### Reconhecimento da Placa (recon.c)
 Existem 3 imagens no repositório disponíveis para testar o código e elas devem estar na mesma pasta que o arquivo recon.c. O nome das imagens devem ser no formato AAAA-MM-DD-CODI.jpg. Execute os seguintes comandos:
