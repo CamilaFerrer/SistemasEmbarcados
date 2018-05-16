@@ -52,9 +52,9 @@ void ctrl_c(int sig)
 int main(int argc, char *argv[])
 {
 	int freq=1;
-  if(argc > 1){
-    freq = atoi(argv[1]);
-  }
+	if(argc > 1){
+		freq = atoi(argv[1]);
+	}
 	system("echo 4 > /sys/class/gpio/export");
 	system("echo out > /sys/class/gpio/gpio4/direction");
 	signal(SIGINT, ctrl_c);
