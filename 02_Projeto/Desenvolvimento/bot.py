@@ -79,13 +79,10 @@ def cancelar(bot, update):
 def main():
     """Start the bot."""
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("597705993:AAHNvx7SV5FjRwQxuDnTokasA8FTl0ADVMM")
+    updater = Updater("<TOKEN>")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
-
-   # NOME_2 = user.full_name
-    #ID_2 = user.id
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
