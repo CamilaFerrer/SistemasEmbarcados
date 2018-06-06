@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
 	char comando[60];
 	char notificacao[23];
 	char placa[7];
-	char arquivo[23];
+	char arquivo[27];
 	int acao = 0;
 	FILE *fp;
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]){
 		exit(1);
 	}
 
-	strncpy(arquivo, argv[1], 23);
+	strncpy(arquivo, argv[1], 27);
 
 	sprintf(comando, "alpr -c br %s.jpg > placa.txt", arquivo);
 	system(comando);
@@ -58,7 +58,7 @@ int main(int argc, char *argv[]){
 	
 	fseek (fp , 25 , SEEK_SET );
 	fscanf(fp, "%s", placa);
-	
+
 	fclose(fp);
 
   	salvar_acesso(placa);

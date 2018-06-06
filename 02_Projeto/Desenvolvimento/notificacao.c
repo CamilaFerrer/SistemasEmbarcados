@@ -10,7 +10,6 @@ void montar_php(char * chat_id, char * placa, char * modelo, char * cor, int aca
 		printf("Erro na abertura do arquivo php. Fim do programa.");
 		exit(1);
 	}
-	
 
 	fprintf(fp, "<?php\n$apiToken = \"597705993:AAHNvx7SV5FjRwQxuDnTokasA8FTl0ADVMM\";\n");
 	fprintf(fp, "$data = [\n\t'chat_id' => '%s',\n", chat_id);
