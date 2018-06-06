@@ -1,4 +1,0 @@
-chat_id 460246452
-/placa KKK1234
-/modelo Gol
-/cor Preto
