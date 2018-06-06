@@ -1,0 +1,4 @@
+chat_id 460246452
+/placa JKC1944
+/modelo Uno
+/cor prata

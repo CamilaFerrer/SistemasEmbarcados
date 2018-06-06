@@ -1,0 +1,4 @@
+chat_id 060246452
+/placa JJJ5678
+/modelo Celta
+/cor Vermelho
