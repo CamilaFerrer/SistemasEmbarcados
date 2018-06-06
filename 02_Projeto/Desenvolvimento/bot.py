@@ -1,6 +1,5 @@
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler
 import logging
-from telegram import User, Update
 from subprocess import call
 
 # Enable logging
@@ -17,7 +16,7 @@ def start(bot, update):
     ID = update.message.chat_id
     FILE = str(ID) + '.txt'
     resposta_file = open(FILE,'w')
-    resposta_file.write(str(ID) + "\n")
+    resposta_file.write('chat_id ' + str(ID) + "\n")
 
     #print ("%s %d", NOME_2,ID_2)
     update.message.reply_text(
@@ -67,22 +66,25 @@ def cor_para_finalizar(bot, update):
 def help(bot, update):
     """Send a message when the command /help is issued."""
     update.message.reply_text(
-    	'Eu só respondo Comandos existentes Help!')
+        'Eu só respondo Comandos existentes Help!')
 
 def cancelar(bot, update):
     """Manda a mensagem quando o comando /cancelar é enviado."""
     update.message.reply_text('Cancelei a sua inscrição para notificação!\nAdorei conversar com você ;)!\n\n'
-    						  'Se quiser receber novamente, mande /start para mim.\nAté mais!')
+                              'Se quiser receber novamente, mande /start para mim.\nAté mais!')
     #logger.info("Olá %s", user.first_name)
     call('cat "funcionou" > msg.txt')
 
 def main():
     """Start the bot."""
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("<TOKEN>")
+    updater = Updater("597705993:AAHNvx7SV5FjRwQxuDnTokasA8FTl0ADVMM")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
+
+   # NOME_2 = user.full_name
+    #ID_2 = user.id
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
