@@ -68,6 +68,6 @@ int main(int argc, char *argv[]){
 
   	system("rm placa.txt");
 	system("rm acesso.txt");
-	printf("-----------------\nTerminou recon!\n-----------------\n");
+
 	return(0);
 }
