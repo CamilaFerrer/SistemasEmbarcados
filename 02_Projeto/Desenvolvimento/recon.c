@@ -47,7 +47,7 @@ int main(int argc, char *argv[]){
 
 	strncpy(arquivo, argv[1], 27);
 
-	sprintf(comando, "alpr -c br %s.jpg > placa.txt", arquivo);
+	sprintf(comando, "alpr -c br %s.png > placa.txt", arquivo);
 	system(comando);
 
   	fp = fopen("placa.txt","r+");

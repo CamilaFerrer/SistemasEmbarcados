@@ -78,7 +78,7 @@ def cancelar(bot, update):
 def main():
     """Start the bot."""
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("<TOKEN>")
+    updater = Updater("597705993:AAHNvx7SV5FjRwQxuDnTokasA8FTl0ADVMM")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher

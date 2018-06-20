@@ -1,0 +1,4 @@
+chat_id 460246452
+/placa FQF9941
+/modelo Uno
+/cor preto
