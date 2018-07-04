@@ -2,18 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-void salvar_acesso(char * placa){
+void salvar_acesso(char * placa, int opcao){
 	FILE *fp, *f_access;
-	char filename[26];
+	char file_entrada[42];
+	char file_saida[40];
 	char semana[3], data[10], hora[8];
 	
 	system("date +'%a %d/%m/%Y %H:%M:%S' > acesso.txt");
 
-	sprintf(filename, "Banco_de_Dados/%s-acessos.txt", placa);
-	
+	if (opcao == 1){
+		sprintf(file_entrada, "Banco_de_Dados/%s-acessos-entrada.txt", placa);
+		fp = fopen(file_entrada,"a+");
+
+	} else {
+		sprintf(file_saida, "Banco_de_Dados/%s-acessos-saida.txt", placa);
+		fp = fopen(file_saida,"a+");
+	}
+
 	f_access = fopen("acesso.txt","r");
-	fp = fopen(filename,"a+");
-	
+		
 	if(!fp && !f_access){
 		printf("Erro na abertura dos arquivos. Fim do programa.");
 		exit(1);
@@ -65,7 +72,7 @@ int main(int argc, char *argv[]){
     }
     fclose(fp);
 
-  	salvar_acesso(placa);
+  	salvar_acesso(placa, atoi(argv[2]));
 
 	sprintf(notificacao, "./notificacao %s %s", placa, argv[2]);
 	system(notificacao);

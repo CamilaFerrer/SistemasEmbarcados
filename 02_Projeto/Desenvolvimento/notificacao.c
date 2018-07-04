@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void montar_php(char * chat_id, char * placa, char * modelo, char * cor, int acao){
+void montar_php(char * chat_id, char * placa, char * modelo, char * cor, int opcao){
 	FILE *fp;
 
 	fp = fopen("update.php","w");
@@ -13,7 +13,7 @@ void montar_php(char * chat_id, char * placa, char * modelo, char * cor, int aca
 
 	fprintf(fp, "<?php\n$apiToken = \"597705993:AAHNvx7SV5FjRwQxuDnTokasA8FTl0ADVMM\";\n");
 	fprintf(fp, "$data = [\n\t'chat_id' => '%s',\n", chat_id);
-	if (acao == 1){
+	if (opcao == 1){
 		fprintf(fp, "\t'text' => 'Seu carro %s de cor %s e placa %s entrou no estacionamento!'\n];\n", modelo, cor, placa);
 	} else {
 		fprintf(fp, "\t'text' => 'Seu carro %s de cor %s e placa %s saiu do estacionamento!'\n];\n", modelo, cor, placa);
