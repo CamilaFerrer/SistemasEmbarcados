@@ -7,15 +7,15 @@
 
 int main(){
 
-	//while(1){
+	while(1){
 		system("./entrada");
 
-		//usleep(TEMPO_ESPERA);
+		usleep(TEMPO_ESPERA);
 
 		system("./saida");
 
-		//usleep(TEMPO_ESPERA);
-	//}
+		usleep(TEMPO_ESPERA);
+	}
 		
 	return(0);
 }
