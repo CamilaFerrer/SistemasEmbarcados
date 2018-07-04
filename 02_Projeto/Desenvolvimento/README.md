@@ -47,6 +47,10 @@ Para a implementação desse processo, escrevemos um script Bash que tira as fot
 chmod 777 23
 ```
 
+### Verificação de Novas Entradas (verificacao.c)
+Este processo é responsável por verificar se existem imagens na pasta **Entrada** que ainda não foram processadas. Caso não existe, ele fica em um loop infinito esperando novas entradas. Caso exista, ele pega o nome dos arquivos, envia para o processo de reconhecimento e armazena a imagem na pasta **Imagens/Entrada/**.
+
+
 ### Reconhecimento da Placa (recon.c)
 Existe 1 imagem no repositório disponíveis para testar o código e elas devem estar na mesma pasta que o arquivo recon.c. O nome das imagens devem ser no formato AAAA-MM-DD_HH-MM-SS.jpg e elas devem estar na pasta **Imagens**. Execute os seguintes comandos:
 
@@ -62,7 +66,7 @@ gcc -o recon recon.c
 ./recon Imagens/2018-04-27_16-45-25.jpg 0
 ```
 
-### Notificação (notificacao.c)
+### Notificação do Usuário (notificacao.c)
 Para receber a notificação é necessário colocar o TOKEN do bot do telegram no arquivo bot.py na linha 81. Também é necessário colocar o _CHAT___ID_ da pessoa que irá receber a notificação no arquivo _Bando_de_Dados/PLACA.txt_. Por motivos de segurança, não disponibilizamos no Git o TOKEN e o CHAT_ID.
 
 
