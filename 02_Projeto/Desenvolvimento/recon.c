@@ -27,44 +27,48 @@ void salvar_acesso(char * placa){
 	fclose(fp);
 }
 
+
 int main(int argc, char *argv[]){
 	
 	char openalpr[183];
-	char comando[60];
+	char comando[55];
 	char notificacao[23];
 	char placa[7];
-	char arquivo[27];
+	char line[33];
+	char arquivo[32];
 	int acao = 0;
+	int count = 0;
 	FILE *fp;
 
-	if(argc < 3){  
+	if(argc < 3){
 		printf("---------------------------------------\n");
-		printf("Erro na execução. Sem arquivo de imagem\n");
-		printf("Fim do programa\n");
+		printf("Erro na execução do recon. Sem arquivo de imagem\n");
 		printf("---------------------------------------\n");
 		exit(1);
 	}
 
-	strncpy(arquivo, argv[1], 27);
-
-	sprintf(comando, "alpr -c br %s.png > placa.txt", arquivo);
+	sprintf(comando, "alpr -c br %s > placa.txt", argv[1]);
 	system(comando);
 
   	fp = fopen("placa.txt","r+");
 	if(!fp){
-		printf("Erro na abertura do arquivo. Fim do programa.");
+		printf("Erro na abertura do arquivo placa.txt. Fim do programa.");
 		exit(1);
 	}
-	
-	fseek (fp , 25 , SEEK_SET );
-	fscanf(fp, "%s", placa);
 
-	fclose(fp);
+	fgets(line, sizeof line, fp);
+	fgets(line, sizeof line, fp);
+
+    while(count < 7){
+		placa[count] = line[count+6];
+    	count++;
+    }
+    fclose(fp);
 
   	salvar_acesso(placa);
 
 	sprintf(notificacao, "./notificacao %s %s", placa, argv[2]);
-  	system(notificacao);
+	system(notificacao);
 
   	system("rm placa.txt");
 	system("rm acesso.txt");

@@ -41,7 +41,7 @@ sudo nano 23
 Copie o código do arquivo webcam.sh e coloque dentro do arquivo aberto.
 
 ### Aquisição de Foto (webcam.sh)
-Para a implementação desse processo, escrevemos um script Bash que tira as fotos dos veículos utilizando uma webcam. O script salva a imagem na pasta **Imagens** já criada dentro da pasta Desenvolvimento. Logo em seguida faça o arquivo ficar executável e mande rodá-lo:
+Para a implementação desse processo, escrevemos um script Bash que tira as fotos dos veículos utilizando uma webcam. O script salva a imagem na pasta **Entrada** já criada dentro da pasta Desenvolvimento. Logo em seguida faça o arquivo ficar executável e mande rodá-lo:
 
 ```bash
 chmod 777 23
@@ -62,5 +62,7 @@ gcc -o recon recon.c
 ./recon Imagens/2018-04-27_16-45-25.jpg 0
 ```
 
-### Notificação
-Para receber a notificação é necessário colocar o TOKEN do bot do telegram no arquivo bot.py na linha 81. Também é necessário colocar o CHAT_ID da pessoa que irá receber a notificação no arquivo Bando_deDados/FQF9941.txt. Por motivos de segurança, não disponibilizamos no Git o TOKEN e o CHAT_ID.
+### Notificação (notificacao.c)
+Para receber a notificação é necessário colocar o TOKEN do bot do telegram no arquivo bot.py na linha 81. Também é necessário colocar o _CHAT___ID_ da pessoa que irá receber a notificação no arquivo _Bando_de_Dados/PLACA.txt_. Por motivos de segurança, não disponibilizamos no Git o TOKEN e o CHAT_ID.
+
+

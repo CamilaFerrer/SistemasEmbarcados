@@ -98,8 +98,7 @@ int main(int argc, char *argv[]){
 	
 	if(argc < 3){  
 		printf("---------------------------------------\n");
-		printf("Erro na execução. Sem arquivo de imagem\n");
-		printf("Fim do programa\n");
+		printf("Erro na execução da notificação. Sem arquivo de imagem.\n");
 		printf("---------------------------------------\n");
 		exit(1);
 	}
@@ -107,9 +106,12 @@ int main(int argc, char *argv[]){
 	organizar_banco();
 
 	sprintf(arquivo, "Banco_de_Dados/%s.txt", argv[1]);
+
 	fp = fopen(arquivo, "r");
-    if (fp == NULL)
-        exit(EXIT_FAILURE);
+    if (fp == NULL){
+    	printf("Não existe arquivo: %s\n", argv[1]);
+        exit(1);
+    }
 
 	getline(&chat_id, &len, fp);
 	strtok(chat_id, "\n");
@@ -122,7 +124,7 @@ int main(int argc, char *argv[]){
 	
 	getline(&cor, &len, fp);
 	strtok(cor, "\n");
-	
+
 	montar_php(chat_id, placa, modelo, cor, atoi(argv[2]));
 
   	system("php update.php");
