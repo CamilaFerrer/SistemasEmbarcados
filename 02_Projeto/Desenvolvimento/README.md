@@ -25,20 +25,29 @@ sudo apt-get install fswebcam
 
 * Entre na pasta **gpio-watch** e execute:
 ```bash
+cd gpio-watch/
+make clean
 make
 sudo make install
 ```
 
-### Acionamento do Sistema (repositório gpio-watch)
-Para observar botão que está conectado ao pin 23, execute a seguinte linha:
+### Acionamento dos Botões (gpio-watch)
+Copie os arquivos da pasta **gpio-scripts** para a pasta **/etc/gpio-scripts**.
+
+```bash
+sudo mkdir /etc/gpio-scripts
+sudo cp /gpio-scripts/* /etc/gpio-scripts/
+```
+
+Para executar o funcionamento dos botões conectados nos pino 23 (entrada) e 24 (saída), abra dois terminais e em cada um execute:
 
 ```bash
 gpio-watch -e switch 23
-cd /etc/gpio-scripts
-sudo nano 23
 ```
 
-Copie o código do arquivo webcam.sh e coloque dentro do arquivo aberto.
+```bash
+gpio-watch -e switch 24
+```
 
 ### Aquisição de Foto (webcam.sh)
 Para a implementação desse processo, escrevemos um script Bash que tira as fotos dos veículos utilizando uma webcam. O script salva a imagem na pasta **Entrada** já criada dentro da pasta Desenvolvimento. Logo em seguida faça o arquivo ficar executável e mande rodá-lo:
