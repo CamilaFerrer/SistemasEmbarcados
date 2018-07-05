@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <unistd.h>
+
+#define TEMPO_ESPERA 10000000
 
 int main(){
 	int num_imagens;
 	char line[32];
-	char line2[32];
 	char comando[29];
-	char comando2[43];
 	FILE *file;
 	FILE *file2;
 
@@ -22,6 +24,7 @@ int main(){
     num_imagens = atoi(line);
 
     if (num_imagens > 0){
+		system("gpio -g pwm 18 100");
     	system("ls Saida/*.png > lista.txt");
     
 		file2 = fopen("lista.txt","r");
@@ -32,21 +35,21 @@ int main(){
 		while (fgets(line, sizeof(line), file2)) {
 			strtok(line, "\n");
 			if(strcmp (line, "\n") != 0){
-				strcpy(line2, line);
-				
 				sprintf(comando, "./recon %s 0", line);
 				system(comando);
-				
-				sprintf(comando2, "mv %s Imagens/Saida/", line2);
-				system(comando2);
 			}
 		}
 	    
 	    fclose(file2);
 		system("rm lista.txt");
+		system("mv Saida/* Imagens/Saida/");
+		
+		usleep(TEMPO_ESPERA);
+		system("gpio -g pwm 18 210");
 	}
 
 	fclose(file);
+	
 	system("rm iniciar.txt");
 	
 	return(0);

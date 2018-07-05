@@ -3,7 +3,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#define TEMPO_ESPERA 2000
+#define TEMPO_ESPERA 1000000
 
 int main(){
 

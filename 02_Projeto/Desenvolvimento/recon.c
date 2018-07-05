@@ -41,6 +41,7 @@ int main(int argc, char *argv[]){
 	char comando[55];
 	char notificacao[23];
 	char placa[7];
+	char temp[7] = "AAA1234";
 	char line[33];
 	char arquivo[32];
 	int acao = 0;
@@ -65,17 +66,16 @@ int main(int argc, char *argv[]){
 
 	fgets(line, sizeof line, fp);
 	fgets(line, sizeof line, fp);
-
-    while(count < 7){
-		placa[count] = line[count+6];
-    	count++;
-    }
+	
+    memcpy(temp, &line[6], 7);
+    strcpy(placa, temp);
+    
     fclose(fp);
-
+    
   	salvar_acesso(placa, atoi(argv[2]));
 
 	sprintf(notificacao, "./notificacao %s %s", placa, argv[2]);
-	system(notificacao);
+    system(notificacao);
 
   	system("rm placa.txt");
 	system("rm acesso.txt");

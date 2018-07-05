@@ -25,18 +25,17 @@ sudo apt-get install fswebcam
 
 * Entre na pasta **gpio-watch** e execute:
 ```bash
-cd gpio-watch/
-make clean
 make
 sudo make install
 ```
 
 ### Acionamento do Sistema (repositório gpio-watch)
-Para observar os botões que estão conectados aos pinos 23 (Entrada) e 24 (Saída), execute:
+Para observar botão que está conectado ao pin 23, execute a seguinte linha:
 
 ```bash
-sudo mkdir etc/gpio-scripts/
-sudo mv gpio-scripts/* /etc/gpio-scripts/
+gpio-watch -e switch 23
+cd /etc/gpio-scripts
+sudo nano 23
 ```
 
 Copie o código do arquivo webcam.sh e coloque dentro do arquivo aberto.

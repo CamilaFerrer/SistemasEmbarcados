@@ -102,7 +102,7 @@ int main(int argc, char *argv[]){
 		printf("---------------------------------------\n");
 		exit(1);
 	}
-
+	
 	organizar_banco();
 
 	sprintf(arquivo, "Banco_de_Dados/%s.txt", argv[1]);
