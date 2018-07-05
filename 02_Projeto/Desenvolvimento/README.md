@@ -31,7 +31,7 @@ make
 sudo make install
 ```
 
-### Acionamento dos Botões (gpio-watch)
+### Instalação dos Botões (gpio-scripts)
 Copie os arquivos da pasta **gpio-scripts** para a pasta **/etc/gpio-scripts**.
 
 ```bash
@@ -39,7 +39,9 @@ sudo mkdir /etc/gpio-scripts
 sudo cp /gpio-scripts/* /etc/gpio-scripts/
 ```
 
-Para executar o funcionamento dos botões conectados nos pino 23 (entrada) e 24 (saída), abra dois terminais e em cada um execute:
+
+### Aquisição de Foto (gpio-watch)
+Para a implementação desse processo, ao acionar o botão conectado ao pino GPIO 23, o script salva a imagem na pasta **Entrada** e ao acionar o botão conectado ao pino GPIO 24, o script salva a imagem na pasta **Saida**. Para executar o script dos botões, abra dois terminais e em cada um execute:
 
 ```bash
 gpio-watch -e switch 23
@@ -49,17 +51,13 @@ gpio-watch -e switch 23
 gpio-watch -e switch 24
 ```
 
-### Aquisição de Foto (webcam.sh)
-Para a implementação desse processo, escrevemos um script Bash que tira as fotos dos veículos utilizando uma webcam. O script salva a imagem na pasta **Entrada** já criada dentro da pasta Desenvolvimento. Logo em seguida faça o arquivo ficar executável e mande rodá-lo:
-
-```bash
-chmod 777 23
-```
-
 
 ### Registro do Usuário (bot.py)
-Para cadastrar o carro no sistema da FGParking, o usuário deve começar uma conversa com o bot do telegram @FGParking com o comando /start. Ao iniciar a conversa, o bot irá perguntar alguns dados do carro para armazenamento e registrar o _CHAT_ID_ do usuário para aquele carro em específico. Por motivos de segurança, não disponibilizamos no Git o _TOKEN_ e o _CHAT_ID_ de teste, por isso é necessário colocar o _TOKEN_ do bot do telegram no arquivo bot.py na linha 81. Também é necessário colocar o _CHAT_ID_ da pessoa que irá receber a notificação no arquivo _Bando_de_Dados/PLACA.txt_.
+Para cadastrar o carro no sistema da FGParking, o usuário deve começar uma conversa com o bot do telegram @FGParking com o comando /start. Ao iniciar a conversa, o bot irá perguntar alguns dados do carro para armazenamento e registrar o _CHAT_ID_ do usuário para aquele carro em específico. Por motivos de segurança, não disponibilizamos no Git o _TOKEN_ e o _CHAT_ID_ de teste, por isso é necessário colocar o _TOKEN_ do bot do telegram no arquivo bot.py na linha 81. Também é necessário colocar o _CHAT_ID_ da pessoa que irá receber a notificação no arquivo _Bando_de_Dados/PLACA.txt_. Abra outro termnal e execute:
 
+```bash
+python bot.py
+```
 
 ### Makefile
 É responsável por compilar todos os arquivos descritos abaixo e por excluir todos os executáveis dos mesmos.
@@ -76,7 +74,7 @@ make clean
 
 
 ### Processo Principal (main.c)
-Esse é o processo principal da aplicação e executa os demais processos dentro dele. Ele fica em um loop infinito chamando os processos _entrada_ e _saida_. Coloque alguma das imagens nas pastas **Entrada** ou **Saida** e execute o seguinte comando:
+Esse é o processo principal da aplicação e executa os demais processos dentro dele. Ele fica em um loop infinito chamando os processos _entrada_ e _saida_. Abra o quarto e ultimo terminal e execute o seguinte comando:
 
 ```bash
 ./main
